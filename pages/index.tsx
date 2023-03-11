@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import MovilImage from "public/image-product-mobile.jpg";
+import EscritorioImage from "public/image-product-desktop.jpg";
 
 export default function Home() {
   return (
@@ -11,42 +12,62 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col h-full bg-[#F2EBE3] ">
-        <main className="flex flex-col h-full p-5">
+      <div className="flex flex-col h-full bg-[#F2EBE3] items-center xl:place-content-center">
+        <main className="flex flex-col xl:flex-row  h-full p-5 xl:max-w-[611px] xl:max-h-[500px]">
           <Image
             src={MovilImage}
             width={686}
             height={480}
             alt="product-image"
-            className="rounded-t-2xl"
+            className="rounded-t-2xl xl:hidden"
           ></Image>
-          <div className="flex flex-col h-full p-5 justify-between bg-white rounded-b-2xl">
-            <p className="capital">perfume</p>
-            <p id="h1 font-['Montserrat']" className="text-4xl font-bold">
+          <Image
+            src={EscritorioImage}
+            width={600}
+            height={900}
+            alt="product-image"
+            className="rounded-l-2xl hidden xl:block xl:w-[50%]"
+          ></Image>
+          <div className="flex flex-col h-full xl:h-full xl:w-[50%] p-7  justify-between bg-white rounded-b-2xl xl:rounded-none xl:rounded-r-2xl">
+            <p className="text-[#6C7289]/90 ">P E R F U M E</p>
+            <p
+              id="h1 font-['Montserrat']"
+              className="text-4xl font-bold font-serif text-[#1C232B]"
+            >
               Gabrielle Essence Eau De Parfum
             </p>
-            <p className="text-[#6C7289]/80">
+            <p className="text-[#6C7289]/80 ">
               A floral, solar and voluptuous interpretation composed by Olivier
               Polge, Perfumer-Creator for the House of CHANEL.
             </p>
             <div className="flex items-center">
-              <p className="text-[#3C8067] text-2xl font-bold"> $149.99</p>
-              <p className="ml-3 line-through">$169.99</p>
+              <p className="text-[#3C8067] text-3xl  font-bold font-serif">
+                $149.99
+              </p>
+              <p className="ml-3 line-through text-[#6C7289]/80 xl:ml-10">
+                $169.99
+              </p>
             </div>
 
-            <button className="bg-[#3C8067] p-3 text-white rounded-lg">
-              Add to Cart
-            </button>
+            <div className="bg-[#3C8067] p-3 text-white flex justify-center rounded-lg">
+              <Image
+                src="/icon-cart.svg"
+                alt="ico"
+                width={15}
+                height={16}
+              ></Image>
+              <p className="ml-2">Add to Cart</p>
+            </div>
           </div>
         </main>
-        <footer className="flex flex-col h-[55px] items-center bg-blue-400">
+        <footer className="flex flex-col h-[50px] items-center justify-center">
           <div className="flex">
             <p>Challenge by </p>
             <a
               href="https://www.frontendmentor.io?ref=challenge"
               target="_blank"
+              className="ml-2 text-blue-600 visited:text-purple-600 underline"
             >
-              {" "}
               Frontend Mentor
             </a>
           </div>
@@ -55,8 +76,8 @@ export default function Home() {
             <a
               href="https://github.com/ReneOsvaldoCamachoFernandez"
               target="_blank"
+              className="ml-2 text-purple-600 visited:text-purple-600 underline"
             >
-              {" "}
               Rene Osvaldo Camacho Fernandez.
             </a>
           </div>
