@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import MovilImage from "public/image-product-mobile.jpg";
 
 export default function Home() {
   return (
@@ -10,10 +11,52 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="text-red-500">
-        <p>placeholder for main</p>
-      </main>
-      <footer>placeholder for footer</footer>
+      <div className="flex flex-col h-full">
+        <main className="flex flex-col h-full">
+          <Image
+            src={MovilImage}
+            width={686}
+            height={480}
+            alt="product-image"
+          ></Image>
+          <div className="flex flex-col h-full p-5 justify-between">
+            <p>perfume</p>
+            <h1>Gabrielle Essence Eau De Parfum</h1>
+            <p>
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
+            </p>
+            <div className="flex">
+              <p> $149.99</p>
+              <p className="ml-3 ">$169.99</p>
+            </div>
+
+            <button className="bg-green-700 p-3 text-white">Add to Cart</button>
+          </div>
+        </main>
+        <footer className="flex flex-col h-[55px] items-center bg-blue-400">
+          <div className="flex">
+            <p>Challenge by </p>
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+            >
+              {" "}
+              Frontend Mentor
+            </a>
+          </div>
+          <div className="flex">
+            <p>Coded by </p>
+            <a
+              href="https://github.com/ReneOsvaldoCamachoFernandez"
+              target="_blank"
+            >
+              {" "}
+              Rene Osvaldo Camacho Fernandez.
+            </a>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }
